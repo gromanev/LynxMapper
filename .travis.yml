@@ -7,4 +7,4 @@ before_script:
   - cd ./src/LynxMapper/
   - dotnet restore
 script:  
-  - dotnet build -c Release -f netcoreapp2.0
+  - dotnet build -c Release
