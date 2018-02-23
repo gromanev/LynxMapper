@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>gromanev</Authors>
+    <Company>LynxTeam</Company>
+    <Description>Faster Mapper (Transformator) for .NET Core 2 (.NET Standart 2)</Description>
+    <Copyright>gromanev</Copyright>
+    <PackageLicenseUrl>https://github.com/gromanev/LynxMapper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/gromanev/LynxMapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/gromanev/LynxMapper</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>mapper, transformator, netstandart20, netcore, net-core, asp, asp-net-core, mapping, model, modelmapper</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

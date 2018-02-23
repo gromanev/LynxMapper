@@ -10,6 +10,7 @@
       "LynxMapper/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.0",
           "NETStandard.Library": "2.0.1"
         },

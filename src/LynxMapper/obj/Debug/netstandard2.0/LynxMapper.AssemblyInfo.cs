@@ -11,8 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("LynxMapper")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LynxTeam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("gromanev")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Faster Mapper (Transformator) for .NET Core 2 (.NET Standart 2)")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("LynxMapper")]
