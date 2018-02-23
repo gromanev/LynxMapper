@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Bogus;
 using Domain.Data.DataModels;
 using Domain.Ef;
 using Microsoft.EntityFrameworkCore;

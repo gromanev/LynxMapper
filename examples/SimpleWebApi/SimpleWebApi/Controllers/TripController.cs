@@ -39,12 +39,10 @@ namespace WebApp.Controllers
             {
                 var trips = await _tripService.GetAllTripsAsync();
 
-                var ts = new TimeSpan();
                 var result = trips.Select(x => _mapper.Map<TripViewModel, Trips>(x)).ToList();
 
                 return Ok(new
                 {
-                    totalTime = ts.TotalMilliseconds,
                     //result = result
                 });
             }

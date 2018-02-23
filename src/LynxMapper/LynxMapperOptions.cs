@@ -6,7 +6,7 @@ namespace LynxMapper
 {
     public class LynxMapperOptions
     {
-        public Dictionary<string, Delegate> Dictionary;
+        internal Dictionary<string, Delegate> Dictionary;
 
         public void RegisterTransformator<T1, T2>(Func<T2, T1> func)
         {
@@ -25,6 +25,13 @@ namespace LynxMapper
             }
 
             Dictionary.Add(key, func);
+        }
+
+        public ILynxTransformator Reg<TAbstract, TImplement>(TAbstract Interface, TImplement Implement)
+            where TAbstract: ILynxTransformator
+            where TImplement: ILynxTransformator
+        {
+            return null;
         }
     }
 }
