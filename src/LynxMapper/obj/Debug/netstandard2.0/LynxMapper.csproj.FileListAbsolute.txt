@@ -1,0 +1,9 @@
+C:\Projects\LynxMapper\src\LynxMapper\bin\Debug\netstandard2.0\LynxMapper.deps.json
+C:\Projects\LynxMapper\src\LynxMapper\bin\Debug\netstandard2.0\LynxMapper.dll
+C:\Projects\LynxMapper\src\LynxMapper\bin\Debug\netstandard2.0\LynxMapper.pdb
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.csprojResolveAssemblyReference.cache
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.csproj.CoreCompileInputs.cache
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.AssemblyInfoInputs.cache
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.AssemblyInfo.cs
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.dll
+C:\Projects\LynxMapper\src\LynxMapper\obj\Debug\netstandard2.0\LynxMapper.pdb
