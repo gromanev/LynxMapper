@@ -1,0 +1,10 @@
+language: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: 2.1.4
+before_script:
+  - cd ./src/LynxMapper/
+  - dotnet restore
+script:  
+  - dotnet build -c Release
