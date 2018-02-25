@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using LynxMapper.Abstractions;
+using LynxMapper.Configs;
 using Microsoft.Extensions.Options;
 
 namespace LynxMapper

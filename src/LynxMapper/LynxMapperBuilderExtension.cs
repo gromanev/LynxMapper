@@ -1,15 +1,22 @@
 ﻿using System;
 using LynxMapper.Abstractions;
+using LynxMapper.Configs;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace LynxMapper
 {
     public static class LynxMapperBuilderExtension
     {
         public static IServiceCollection AddLynxMapperTransformators(this IServiceCollection services,
-            Action<LynxMapperOptions> lynxMapperOptions)
+            Action<RegisterTransformatorOptions> options)
         {
-            
+            services.Configure(options);
+            services.AddTransient<LynxMapperServiceProvider>();
+
+            LynxMapperServiceProvider.Collection = services;
+
+            return services;
         }
 
         /// <summary>
@@ -20,6 +27,7 @@ namespace LynxMapper
         public static void AddLynxMapper(this IServiceCollection services, Action<LynxMapperOptions> lynxMapperOptions)
         {
             services.AddTransient<ILynxMapper, LynxMapper>();
+
             services.Configure(lynxMapperOptions);
         }
     }

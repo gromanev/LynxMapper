@@ -39,7 +39,7 @@ namespace SimpleWebApi.Controllers
 
                 return Ok(new
                 {
-                    //result = result
+                    result = result
                 });
             }
             catch (Exception)

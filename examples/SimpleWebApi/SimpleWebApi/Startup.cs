@@ -26,7 +26,7 @@ namespace SimpleWebApi
 
         public Startup(IConfiguration configuration)
         {
-            Configuration = (IConfigurationRoot)configuration;
+            Configuration = (IConfigurationRoot) configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -36,14 +36,12 @@ namespace SimpleWebApi
             services.AddTransient<ITripRepository, TripRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-            services.AddTransient<ITripTransformator, TripTransformator>();
-            services.AddTransient<IUserTransformator, UserTransformator>();
-
             services.AddTransient<ITripService, TripService>();
             services.AddTransient<ILynxServiceProvider, LynxServiceProvider>();
 
             services.AddMvc()
-                    .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                .AddJsonOptions(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             try
             {
@@ -61,14 +59,18 @@ namespace SimpleWebApi
 
             services.DbInitialize();
 
-            var build = services.BuildServiceProvider();
-
-            services.AddLynxMapper(options =>
-            {
-                options.RegisterTransformator<TripViewModel, Trips>(build.GetService<ITripTransformator>().ToTripViewModel);
-                options.RegisterTransformator<UserViewModel, Users>(build.GetService<IUserTransformator>().ToUserViewModel);
-                options.RegisterTransformator<UserFullViewModel, Users>(build.GetService<IUserTransformator>().ToUserFullViewModel);
-            });
+            services
+                .AddLynxMapperTransformators(o =>
+                {
+                    o.Reg<ITripTransformator, TripTransformator>();
+                    o.Reg<IUserTransformator, UserTransformator>();
+                })
+                .AddLynxMapper(options =>
+                {
+                    options.RegisterFor<TripViewModel, Trips>(options.GetTransformator<ITripTransformator>().ToTripViewModel);
+                    options.RegisterFor<UserViewModel, Users>(options.GetTransformator<IUserTransformator>().ToUserViewModel);
+                    options.RegisterFor<UserFullViewModel, Users>(options.GetTransformator<IUserTransformator>().ToUserFullViewModel);
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,8 +80,6 @@ namespace SimpleWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //app.UseLynxMapper();
 
             app.UseMvc();
         }
