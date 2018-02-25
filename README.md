@@ -13,3 +13,109 @@ Install LynxMapper and it's dependencies using NuGet.
 `Install-Package LynxMapper`
 
 All versions can be found [here](https://www.nuget.org/packages/LynxMapper/)
+
+## Use
+
+Use LinsMapper is very simple.
+
+1. Create Transformator:
+
+1.1 Create Transformator Abstractions:
+```csharp
+using LynxMapper;
+
+namespace Services.Abstractions.Transformators
+{
+    public interface IUserTransformator: ILynxTransformator
+    {
+        UserViewModel ToUserViewModel(Users user);
+    }
+}
+```
+
+1.2 Create Transformator Implementations:
+```csharp
+namespace Services.Implementations.Transformators
+{
+    public class UserTransformator : IUserTransformator
+    {
+        public UserViewModel ToUserViewModel(Users user)
+        {
+            try
+            {
+                return new UserViewModel
+                {
+                    Name = $"{user.LastName} {user.FirstName} {user.Patronimic}",
+                    Age = (int) ((DateTime.Now - user.YearOfBirth).TotalDays / 365.2425)
+                };
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+    }
+}
+```
+
+2. Register Transformators in Startup.cs:
+```csharp
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddTransient<IUserTransformator, UserTransformator>();
+        
+        var build = services.BuildServiceProvider();
+        
+        services.AddLynxMapper(options =>
+        {
+            options.RegisterTransformator<UserViewModel, Users>(build.GetService<IUserTransformator>().ToUserViewModel);
+        });
+    }
+}
+```
+
+3. Use it!
+```csharp
+using LynxMapper;
+
+namespace SimpleWebApi.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/users/[action]")]
+    public class UserController: Controller
+    {
+        private readonly IUserService _userService;
+        private readonly ILynxMapper _mapper;
+
+        public TripController(ILynxServiceProvider LynxServiceProvider, ILynxMapper mapper)
+        {
+            _tripService = lynxServiceProvider.UserService;
+            _mapper = mapper;
+        }
+
+        /// <summary>
+        /// Get list all users
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Produces("application/json", Type = typeof(ICollection<UserViewModel>))]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            try
+            {
+                var users = await _userService.GetAllUsersAsync();
+
+                var result = users.Select(x => _mapper.Map<UsersViewModel, Users>(x)).ToList();
+
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Users bad request.");
+            }
+        }
+    }
+}
+```
