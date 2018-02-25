@@ -6,6 +6,10 @@
 
 Faster Mapper (Transformator) for .NET Core 2 (.NET Standart 2)
 
+## Description
+
+A simple library for comparing models to .NET Core for use in real production.
+
 ## Install
 
 Install LynxMapper and it's dependencies using NuGet.
