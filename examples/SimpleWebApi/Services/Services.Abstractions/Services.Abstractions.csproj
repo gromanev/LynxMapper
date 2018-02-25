@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LynxMapper" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\LynxMapper\LynxMapper.csproj" />
     <ProjectReference Include="..\..\Domain\Domain.Ef\Domain.Ef.csproj" />
   </ItemGroup>
 
