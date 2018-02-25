@@ -97,7 +97,7 @@ namespace SimpleWebApi.Controllers
 
         public TripController(ILynxServiceProvider LynxServiceProvider, ILynxMapper mapper)
         {
-            _tripService = lynxServiceProvider.UserService;
+            _userService = LynxServiceProvider.UserService;
             _mapper = mapper;
         }
 
