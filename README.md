@@ -16,7 +16,7 @@ All versions can be found [here](https://www.nuget.org/packages/LynxMapper/)
 
 ## Use
 
-Use LinsMapper is very simple.
+Use LinxMapper is very simple.
 
 ### 1. Create Transformator:
 
