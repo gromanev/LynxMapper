@@ -5,3 +5,11 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/gromanev/lynxmapper.svg)](https://github.com/gromanev/LynxMapper)
 
 Faster Mapper (Transformator) for .NET Core 2 (.NET Standart 2)
+
+## Install
+
+Install LynxMapper and it's dependencies using NuGet.
+
+`Install-Package LynxMapper`
+
+All versions can be found [here](https://www.nuget.org/packages/LynxMapper/)
