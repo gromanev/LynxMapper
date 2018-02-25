@@ -8,7 +8,9 @@ Faster Mapper (Transformator) for .NET Core 2 (.NET Standart 2)
 
 ## Description
 
-A simple library for comparing models to .NET Core for use in real production.
+A simple library for comparing models (mapping) to .NET Core for use in real production.
+
+Mapping is carried out with the help of special methods - transformers (transformators), which gives greater flexibility in use for solving real problems.
 
 ## Install
 
