@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Data.DataModels;
@@ -8,11 +7,8 @@ using Domain.Data.ViewModels;
 using LynxMapper;
 using Microsoft.AspNetCore.Mvc;
 using Services.Abstractions.Services;
-using Services.Abstractions.Transformators;
-using Services.Implementations.Services;
-using LynxMapper = LynxMapper.LynxMapper;
 
-namespace WebApp.Controllers
+namespace SimpleWebApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/trip/[action]")]
