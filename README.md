@@ -18,9 +18,9 @@ All versions can be found [here](https://www.nuget.org/packages/LynxMapper/)
 
 Use LinsMapper is very simple.
 
-1. Create Transformator:
+### 1. Create Transformator:
 
-1.1 Create Transformator Abstractions:
+#### 1.1 Create Transformator Abstractions:
 ```csharp
 using LynxMapper;
 
@@ -33,7 +33,7 @@ namespace Services.Abstractions.Transformators
 }
 ```
 
-1.2 Create Transformator Implementations:
+#### 1.2 Create Transformator Implementations:
 ```csharp
 namespace Services.Implementations.Transformators
 {
@@ -58,7 +58,7 @@ namespace Services.Implementations.Transformators
 }
 ```
 
-2. Register Transformators in Startup.cs:
+### 2. Register Transformators in Startup.cs:
 ```csharp
 public class Startup
 {
@@ -76,7 +76,7 @@ public class Startup
 }
 ```
 
-3. Use it!
+### 3. Use it!
 ```csharp
 using LynxMapper;
 
