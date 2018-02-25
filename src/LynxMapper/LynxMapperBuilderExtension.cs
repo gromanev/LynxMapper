@@ -1,10 +1,17 @@
 ﻿using System;
+using LynxMapper.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LynxMapper
 {
     public static class LynxMapperBuilderExtension
     {
+        public static IServiceCollection AddLynxMapperTransformators(this IServiceCollection services,
+            Action<LynxMapperOptions> lynxMapperOptions)
+        {
+            
+        }
+
         /// <summary>
         /// Add to service collection container
         /// </summary>

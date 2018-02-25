@@ -4,6 +4,7 @@ using System.Text;
 using Domain.Data.DataModels;
 using Domain.Data.ViewModels;
 using LynxMapper;
+using LynxMapper.Abstractions;
 
 namespace Services.Abstractions.Transformators
 {

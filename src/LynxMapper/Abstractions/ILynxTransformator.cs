@@ -1,4 +1,4 @@
-﻿namespace LynxMapper
+﻿namespace LynxMapper.Abstractions
 {
     public interface ILynxTransformator
     {
