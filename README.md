@@ -107,7 +107,7 @@ namespace SimpleWebApi.Controllers
             {
                 var users = await _userService.GetAllUsersAsync();
 
-                var result = users.Select(x => _mapper.Map<UsersViewModel, Users>(x)).ToList();
+                var result = users.Select(x => _mapper.Map<UserViewModel, Users>(x)).ToList();
 
                 return Ok(result);
             }
