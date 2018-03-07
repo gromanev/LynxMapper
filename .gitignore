@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /src/LynxMapper/bin
 /src/LynxMapper/obj
+/examples/SimpleWebApi/SimpleWebApi/trips.db

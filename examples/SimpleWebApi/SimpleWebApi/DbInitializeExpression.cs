@@ -52,7 +52,7 @@ namespace SimpleWebApi
                 .RuleFor(x => x.YearOfBirth,
                     f => f.Date.Between(DateTime.Now.AddYears(-70), DateTime.Now.AddYears(-20)));
 
-            context.Users.AddRange(fakeUsers.Generate(100000));
+            context.Users.AddRange(fakeUsers.Generate(10000));
             context.SaveChanges();
 
             #endregion
@@ -80,7 +80,7 @@ namespace SimpleWebApi
                 .RuleFor(x => x.RouteId, f => f.PickRandom(routes.Select(s => s.Id)))
                 .RuleFor(x => x.StartTime, f => f.Date.Between(DateTime.Now.AddDays(1), DateTime.Now.AddDays(60)));
 
-            context.Trips.AddRange(fakeTrips.Generate(10000));
+            context.Trips.AddRange(fakeTrips.Generate(1000));
             context.SaveChanges();
 
             #endregion
